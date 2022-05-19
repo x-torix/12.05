@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="12.05.css">
+    <title>Document</title>
+</head>
+<body id="tło">
+    <div class="div.hi">
+        <p>Jakie paliwo: </p>
+        <input type="radio" id="ropa" name="paliwo">
+        <label for="ropa">ropa</label>
+        <input type="text" id="cenaRopy">
+
+    </div>
+
+    <div>
+        
+        <input type="radio" id="benzyna" name="paliwo"  checked>
+        <label for="benzyna">benzyna</label>
+        <input type="text" id="cenaBenzyny">
+
+    </div>
+
+
+     <h2>Ile paliwa: </h2>
+     <input type="text" id="ilepaliwa">
+     <button onclick="benzyna()" id="guzik">Policz</button>
+
+     <p > cena: </p> 
+     <input type="text" id="wynik" value="0" readonly></input>
+
+
+     <script>
+         let cenaBenzyny; 
+         let cenaRopy; 
+         let ilepaliwa;
+         let wynik;
+
+         function benzyna(){
+            ilepaliwa= document.getElementById("ilepaliwa").value;
+            cenaBenzyny= document.getElementById("cenaBenzyny").value;
+            cenaRopy= document.getElementById("cenaRopy").value;
+            if (document.getElementById("benzyna").checked) {
+                
+                
+                
+                wynik=cenaBenzyny*ilepaliwa;
+                document.getElementById("wynik").value=wynik;
+            }
+            if (document.getElementById("ropa").checked) {
+             wynik=cenaRopy*ilepaliwa;
+             document.getElementById("wynik").value=wynik;
+            }
+            
+   
+         }
+
+     </script>
+    
+</body>
+</html>
